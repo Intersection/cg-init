@@ -1,5 +1,4 @@
-FILL THIS OUT
-==============
+(Please fill out this README as a courtesy to your team and maintainers)
 
 
 Project Name
