@@ -1,6 +1,11 @@
+FILL THIS OUT
+==============
+
+
 Project Name
 =============
-What is this project all about?
+What is this project all about? 
+
 
 Setup Instructions (git cg-init)
 --------------------------------
