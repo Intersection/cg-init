@@ -1,19 +1,44 @@
 #!/usr/bin/env bash
 
-$REPO='controlgroup'
 
-if [ -z "$1" ]
+CG_ORG='controlgroup'
+
+ORG=$CG_ORG
+
+REPO=''
+
+if [ -z "$1" ] || [ -z "$2" ]
 then
-  echo "Usage: git cg-init projectName\n"
+  echo "Usage: git cg-init orgName componentName localDirName"
 else
-  echo "Creating local repo $1, setting remote to controlgroup/$1"
-  git clone --depth 1 git@github.com:$REPO/cg-init.git $1
+  ORG=$1
+  REPO=$2
+  if [ -z "$3" ]
+  then
+    DIR=$ORG-$REPO
+  else
+    echo "Adding location prefix ($3)"
+    DIR=$3/$ORG-$REPO
+  fi
+
+  echo "Creating local repo $DIR"
   
-  cd $1
-  rm -rf .git
-  git init .
-  git remote add origin git@github.com:$REPO/$1.git
-  git add .
-  git commit -a -m "First Commit"
-  git push origin master
+  mkdir -p $DIR
+  cd $DIR
+  git clone --depth 1 git@github.com:$CG_ORG/cg-init.git .
+  
+  echo -n "Is the remote (git@github.com:$ORG/$ORG-$REPO.git) ready? [N]: "
+  read remoteReady
+  if [[ $remoteReady == "Y" || $remoteReady == "y" ]]
+  then
+    echo "Setting remote to $ORG/$DIR"
+    rm -rf .git
+    git init .
+    git remote add origin git@github.com:$ORG/$ORG-$REPO.git
+    git add .
+    git commit -a -m "Bootstrap commit via cg-init"
+    git push origin master
+  else
+    echo "$remoteready Not setting remote to $ORG/$DIR - Please create remote and add it manually"
+  fi
 fi
