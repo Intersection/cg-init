@@ -24,8 +24,14 @@ source ~/.profile
 git cg-init
 ```
 
+This is, of course, a security risk. Adding a random folder to your path means I'll hijack your 'git' command and make it send me all your bitcoins. 
+The paranoid should use the second path.
+
 Approach B: Grab the script and put it in your $PATH somewhere.
 ```bash
+cd WHEREVER
+curl -O https://raw.github.com/controlgroup/cg-init/master/tools/git-cg-init
+chmod +x git-cg-init
 export PATH=$PATH:/path/to/folder/with/git-cg-init/
 source ~/.profile
 git cg-init
