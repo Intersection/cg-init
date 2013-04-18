@@ -2,7 +2,6 @@
 
 
 CG_ORG='controlgroup'
-
 ORG=$CG_ORG
 
 REPO=''
