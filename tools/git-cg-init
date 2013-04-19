@@ -1,43 +1,55 @@
 #!/usr/bin/env bash
 
+# What is the cg github account id?
+CG='controlgroup'
 
-CG_ORG='controlgroup'
-ORG=$CG_ORG
+# What is the github organization to use for the new repo?
+ORG=''
 
-REPO=''
+# What is the component name?
+COMPONENT=''
+
+# What is the local base directory for creating the new local repo?
+LOCALDIR=''
+
+# Full directory for the repo, locally, from current location
+FULLDIR=''
 
 if [ -z "$1" ] || [ -z "$2" ]
 then
   echo "Usage: git cg-init orgName componentName localDirName"
 else
   ORG=$1
-  REPO=$2
+  COMPONENT=$2
+
+  GITHUB_URL="git@github.com:$ORG/$COMPONENT.git"
+
   if [ -z "$3" ]
   then
-    DIR=$ORG-$REPO
+    LOCALDIR=$ORG/$COMPONENT
   else
     echo "Adding location prefix ($3)"
-    DIR=$3/$ORG-$REPO
+    LOCALDIR=$3/$ORG/$COMPONENT
   fi
 
-  echo "Creating local repo $DIR"
+  echo "Creating local repo $LOCALDIR"
   
-  mkdir -p $DIR
-  cd $DIR
-  git clone --depth 1 git@github.com:$CG_ORG/cg-init.git .
+  mkdir -p $LOCALDIR
+  cd $LOCALDIR
+  git clone --depth 1 git@github.com:$CG/cg-init.git .
+  rm -rf .git
+  git init .
+  git add .
+  git commit -a -m "Bootstrap commit via cg-init"
   
-  echo -n "Is the remote (git@github.com:$ORG/$ORG-$REPO.git) ready? [N]: "
+  echo -n "Is the remote ($GITHUB_URL) ready? [N]: "
   read remoteReady
   if [[ $remoteReady == "Y" || $remoteReady == "y" ]]
   then
-    echo "Setting remote to $ORG/$DIR"
-    rm -rf .git
-    git init .
-    git remote add origin git@github.com:$ORG/$ORG-$REPO.git
-    git add .
-    git commit -a -m "Bootstrap commit via cg-init"
+    echo "Setting remote to $ORG/$COMPONENT"
+    git remote add origin $GITHUB_URL
     git push origin master
   else
-    echo "$remoteready Not setting remote to $ORG/$DIR - Please create remote and add it manually"
+    echo "$remoteready Not setting remote to $ORG/$LOCALDIR - Please create remote and add it manually"
   fi
 fi
