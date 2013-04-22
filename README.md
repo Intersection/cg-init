@@ -21,3 +21,7 @@ QA Manager: Dan Meltz @danmeltz
 
 Support Manager: Jon Spooner @jonspooner
 
+
+Note for Control Group Teams
+----------------------------------------
+If you need the cg-init tool or other tools, clone the cg-bin repo.
