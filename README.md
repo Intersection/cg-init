@@ -48,7 +48,7 @@ git cg-init organizationName projectName localDirName
 For example, if you're in your home directory and all your projects are in a folder called Projects, and you want to create a component called Visualizer for the company Control Group, you would do the following:
 
 ```bash
-git cg-init controlgroup Visualizer Projects/controlgroup
+git cg-init controlgroup Visualizer Projects
 ```
 
 Answer [Y] when asked if the remote repo (on github) exists. Unless it doesn't. In that case, you'll need to set it up afterwards with normal ol' git commands. Github will give you instructions when you create your repo. Look for this line:
