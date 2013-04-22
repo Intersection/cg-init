@@ -45,6 +45,12 @@ To set up a new project, you can use the macro once it's in your $PATH.
 git cg-init organizationName projectName localDirName
 ```
 
+For example, if you're in your home directory and all your projects are in a folder called Projects, and you want to create a component called Visualizer for the company Control Group, you would do the following:
+
+```bash
+git cg-init controlgroup Visualizer Projects/controlgroup
+```
+
 Answer [Y] when asked if the remote repo (on github) exists. Unless it doesn't. In that case, you'll need to set it up afterwards with normal ol' git commands. Github will give you instructions when you create your repo. Look for this line:
 ```bash
 git remote add...
