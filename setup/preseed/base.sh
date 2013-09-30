@@ -9,3 +9,7 @@ sleep 30;
 sudo apt-get -y update;
 sudo apt-get install -y git puppet zip virtualbox-guest-additions-iso;
 
+#Language specific configurations can be included below
+#sudo ./java-preseed/base.sh
+#sudo ./python-preseed/base.sh
+#sudo ./php-preseed/base.sh
