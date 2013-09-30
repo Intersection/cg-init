@@ -10,3 +10,23 @@ Manual Instructions
 ====================
 
 None, unless someone edits this.
+
+
+Directory Structure
+====================
+
+    |---mac/ This contains the packer specific file for mac based host OS
+    |
+    |---linux/ This contains the packer specific file for linux based host OS
+    |
+    |---windows/ This contains the packer specific file for windows based host OS
+    |
+    |---preseed/ This contains the base preseed configuration as well as language specific based configurations
+         |
+         |---base.sh The base install script
+         |
+         |---java-preseed This contains the java specific configurations
+         |
+         |---php-preseed This containst the php specific configurations
+         |
+         |---python-preseed This contains the python specific configurations
