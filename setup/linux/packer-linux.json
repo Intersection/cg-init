@@ -1,6 +1,5 @@
 {
   "variables": {
-  "preseed": ""
 },
   "builders": [
   {
@@ -28,7 +27,7 @@
   "provisioners": [
     {"type": "shell",
     "scripts": [
-      "{{user `preseed`}}/base.sh"
+      "preseed/base.sh"
       ]
     }],
   "post-processors": ["vagrant"]

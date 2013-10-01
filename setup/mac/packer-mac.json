@@ -10,7 +10,7 @@
     "iso_checksum_type": "md5",
     "ssh_username": "ubuntu",
     "ssh_password": "ubuntu",
-    "http_directory": "preseed",
+    "http_directory": "../preseed",
     "shutdown_command": "sudo shutdown -P now",
     "boot_command": [
       "<esc><esc><enter><wait>",
@@ -24,15 +24,10 @@
       "initrd=/install/initrd.gz -- <enter>"
     ]
   }],
-  "provisioners": [{
-    "type": "file",
-    "source": "/../../nuskin-cms.zip",
-    "destination": "/home/ubuntu/nuskin-cms.zip"
-    },
+  "provisioners": [
     {"type": "shell",
     "scripts": [
-      "base.sh",
-      "install.sh"
+      "preseed/base.sh"
       ]
     }],
   "post-processors": ["vagrant"]
