@@ -30,3 +30,16 @@ Directory Structure
          |---php-preseed This containst the php specific configurations
          |
          |---python-preseed This contains the python specific configurations
+
+
+Packer Commands
+===============
+
+
+Validate the packer file
+    $ packer validate <arch>/packer-<arch>.json
+
+
+Build packer
+   $ packer build <arch>/packer-<arch>.json 
+
