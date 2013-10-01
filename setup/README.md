@@ -46,9 +46,11 @@ Packer Commands
 
 
 Validate the packer file
+
     $ packer validate <arch>/packer-<arch>.json
 
 
 Build packer
+
    $ packer build <arch>/packer-<arch>.json 
 
