@@ -16,12 +16,12 @@ else
   #add ssh user
   echo "Adding ssh user..."
   sed -i "" '36i\'$'\n''config.ssh.username = "ubuntu"' Vagrantfile 
-  echo "Bringing Box Up..."
-
+  
+  echo "Bringing Box Up..." `date`
   #vagrant up
   vagrant up
-  echo "Vagrant box is up..."
-  echo "Attempting to ssh to box..."
+  echo "Vagrant box is up..." `date`
+  echo "Attempting to ssh to box..." `date`
 
   #vagrant ssh
   vagrant ssh
