@@ -3,9 +3,12 @@ if [ -z "$1" ]
 then
   echo "Usage: install arch"
 else
+  #Turn on debug
+  VAGRANT_LOG=info 
+  
   #do packer install
   echo "Starting packer build at " `date`  
-  packer build $1/packer-$1.json
+  PACKER_LOG=1 packer --only=virtualbox build $1/packer-$1.json
   echo "Packer build complete at " `date`
 
   #vagrant init
