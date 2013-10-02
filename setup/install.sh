@@ -3,9 +3,12 @@ if [ -z "$1" ]
 then
   echo "Usage: install arch"
 else
+  #Turn on debug
+  VAGRANT_LOG=info 
+  
   #do packer install
   echo "Starting packer build at " `date`  
-  packer build $1/packer-$1.json
+  PACKER_LOG=1 packer --only=virtualbox build $1/packer-$1.json
   echo "Packer build complete at " `date`
 
   #vagrant init
@@ -16,12 +19,12 @@ else
   #add ssh user
   echo "Adding ssh user..."
   sed -i "" '36i\'$'\n''config.ssh.username = "ubuntu"' Vagrantfile 
-  echo "Bringing Box Up..."
-
+  
+  echo "Bringing Box Up..." `date`
   #vagrant up
   vagrant up
-  echo "Vagrant box is up..."
-  echo "Attempting to ssh to box..."
+  echo "Vagrant box is up..." `date`
+  echo "Attempting to ssh to box..." `date`
 
   #vagrant ssh
   vagrant ssh
