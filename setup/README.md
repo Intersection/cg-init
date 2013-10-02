@@ -52,5 +52,5 @@ Validate the packer file
 
 Build packer
 
-   $ packer build <arch>/packer-<arch>.json 
+    $ packer build <arch>/packer-<arch>.json 
 
