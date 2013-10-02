@@ -24,7 +24,11 @@
       "initrd=/install/initrd.gz -- <enter>"
     ]
   }],
-  "provisioners": [
+  "provisioners": [{
+    "type": "file",
+    "source": "preseed/puppet",
+    "destination": "/home/ubuntu"
+    },
     {"type": "shell",
     "scripts": [
       "preseed/base.sh"
