@@ -5,6 +5,25 @@ then
 else
   #Turn on debug
   VAGRANT_LOG=info 
+ 
+  #Check for existing files and remove before attempting new build
+  if [ -e "Vagrantfile" ]
+  then
+  echo "Removing current Vagrantfile"
+  rm Vagrantfile
+  fi 
+  
+  if [ -e "packer_virtualbox_virtualbox.box" ]
+  then  
+  echo "Removing current box"
+  rm packer_virtualbox_virtualbox.box
+  fi
+ 
+  if [ -e ".vagrant" ]
+  then
+  echo "Removing current vagrant configs"
+  rm -r .vagrant
+  fi
   
   #do packer install
   echo "Starting packer build at " `date`  
