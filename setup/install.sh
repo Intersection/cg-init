@@ -41,7 +41,11 @@ else
   #add ssh user
   echo "Adding ssh user..."
   sed -i "" '36i\'$'\n''config.ssh.username = "ubuntu"' Vagrantfile 
-  
+
+  #configure shared folder
+  echo "Configuring shared folder..."
+  sed -i "" '42i\'$'\n''config.vm.synced_folder "../product", "/home/ubuntu/product"' Vagrantfile
+
   echo "Bringing Box Up..." `date`
   #vagrant up
   vagrant up
