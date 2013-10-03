@@ -4,7 +4,7 @@ then
   echo "Usage: install arch"
 else
   #Turn on debug
-  VAGRANT_LOG=info 
+  #VAGRANT_LOG=info 
  
   #Check for existing files and remove before attempting new build
   if [ -e "Vagrantfile" ]
@@ -29,7 +29,8 @@ else
   
   #do packer install
   echo "Starting packer build at " `date`  
-  PACKER_LOG=1 packer build -only=virtualbox $1/packer-$1.json
+  #PACKER_LOG=1 packer build -only=virtualbox $1/packer-$1.json
+  packer build -only=virtualbox $1/packer-$1.json
   echo "Packer build complete at " `date`
 
   #vagrant init
