@@ -31,8 +31,16 @@ Directory Structure
     |---windows/ This contains the packer specific file for windows based host OS
     |
     |---preseed/ This contains the base preseed configuration 
+    |    |
+    |    |---base.sh The base install script
+    |
+    |---puppet/ This contains the puppet modules and receipes
          |
-         |---base.sh The base install script
+         |---manifets/ This contains the main puppet manifest
+         |      |
+         |      |---init.pp This file is the main puppet manifest. 
+         |
+         |---modules/ This contains the different modules that may be included in a project
 
 
 Packer Commands
