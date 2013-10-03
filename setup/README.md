@@ -14,12 +14,14 @@ None, unless someone edits this.
 Initial Setup
 =============
 
-    After checking out this template, a developer must update each of the packer specific architecture packer-<arch>.json files to include the appropriate language preseed files. For example to include additional java language dependencies update the provisioners section as follows:
-        "scripts": [
-          "preseed/base.sh",
-          "preseed/java-preseed/base.sh"
-      ]        
+	After the initial checkout of this template, a developer must edit the needed puppet modules configurations to set config options such as database name, db user, db pass, etc. They must also edit the puppet/manifests/init.pp to include the needed dependencies. 
+        This will be a one time setup.
 
+
+Onboarding Instructions
+=======================
+
+	If you are an onboarding developer, the configurations have already been setup. Simply run the ./install.sh <arch> script for your respective host architecture.
 
 Directory Structure
 ====================
