@@ -10,6 +10,8 @@ else
   if [ -e "Vagrantfile" ]
   then
   echo "Removing current Vagrantfile"
+  vagrant destroy
+  vagrant box remove dev
   rm Vagrantfile
   fi 
   
@@ -27,7 +29,7 @@ else
   
   #do packer install
   echo "Starting packer build at " `date`  
-  PACKER_LOG=1 packer --only=virtualbox build $1/packer-$1.json
+  PACKER_LOG=1 packer build -only=virtualbox $1/packer-$1.json
   echo "Packer build complete at " `date`
 
   #vagrant init
