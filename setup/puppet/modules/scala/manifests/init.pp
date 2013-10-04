@@ -1,4 +1,5 @@
 class scala {
+require java
 
 file { '/tmp/scala-2.10.3.tgz':
     ensure => present,
@@ -12,9 +13,9 @@ file { '/tmp/scala-2.10.3.tgz':
   }
 
   exec { 'Extract scala':
-    cwd     => '/usr/local',
+    cwd     => '/usr/share',
     command => 'tar xvf /tmp/scala-2.10.3.tgz',
-    creates => '/usr/local/scala-2.10.3',
+    creates => '/usr/share/scala',
     require => Exec['Fetch scala'];
   }
 
@@ -22,17 +23,17 @@ file { '/tmp/scala-2.10.3.tgz':
     require => Exec['Extract scala'];
   }
 
-  file { '/usr/local/scala':
+  file { '/usr/bin/scala':
     ensure  => link,
-    target  => '/usr/local/scala-2.10.3',
+    target  => '/usr/share/scala/bin/scala',
     require => File['/usr/local/scala-2.10.3'];
   }
   
-  file { '/opt/boxen/bin/scala': 
-    ensure => link,
-    target  => '/usr/local/scala/bin/scala',
-    require => File['/usr/local/scala'];
-  }
+  #file { '/usr/bin/scala/bin/scala': 
+  #  ensure => link,
+  #  target  => '/usr/local/scala/bin/scala',
+  #  require => File['/usr/local/scala'];
+  #}
 
 
 
