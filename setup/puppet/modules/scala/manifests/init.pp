@@ -25,16 +25,8 @@ file { '/tmp/scala-2.10.3.tgz':
 
   file { '/usr/bin/scala':
     ensure  => link,
-    target  => '/usr/share/scala/bin/scala',
+    target  => '/usr/share/scala-2.10.3/bin/scala',
     require => File['/usr/local/scala-2.10.3'];
   }
   
-  #file { '/usr/bin/scala/bin/scala': 
-  #  ensure => link,
-  #  target  => '/usr/local/scala/bin/scala',
-  #  require => File['/usr/local/scala'];
-  #}
-
-
-
 }
