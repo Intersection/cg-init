@@ -14,14 +14,14 @@ None, unless someone edits this.
 Initial Setup
 =============
 
-	After the initial checkout of this template, a developer must edit the needed puppet modules configurations to set config options such as database name, db user, db pass, etc. They must also edit the puppet/manifests/init.pp to include the needed dependencies. 
-        This will be a one time setup.
+After the initial checkout of this template, a developer must edit the needed puppet modules configurations to set config options such as database name, db user, db pass, etc. They must also edit the puppet/manifests/init.pp to include the needed dependencies. 
+This will be a one time setup.
 
 
 Onboarding Instructions
 =======================
 
-	If you are an onboarding developer, the configurations have already been setup. Simply run the ./install.sh <arch> script for your respective host architecture.
+If you are an onboarding developer, the configurations have already been setup. Simply run the ./install.sh <arch> script for your respective host architecture.
 
 Directory Structure
 ====================
