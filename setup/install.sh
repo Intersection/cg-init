@@ -46,6 +46,10 @@ else
   echo "Configuring shared folder..."
   sed -i "" '42i\'$'\n''config.vm.synced_folder "../product", "/home/ubuntu/product"' Vagrantfile
 
+  #configure port forwarding
+  echo "Configuring port forwarding..."
+  sed -i "" '23i\'$'\n''config.vm.network :forwarded_port, guest: 80, host: 8080' Vagrantfile
+
   echo "Bringing Box Up..." `date`
   #vagrant up
   vagrant up
