@@ -1,4 +1,3 @@
-
 if [ -z "$1" ] 
 then
   echo "Usage: install arch"
@@ -49,6 +48,12 @@ else
   #configure port forwarding
   echo "Configuring port forwarding..."
   sed -i "" '23i\'$'\n''config.vm.network :forwarded_port, guest: 80, host: 8080' Vagrantfile
+  
+  #configure memory for box
+  echo "Configuring box memory..."
+  sed -i "" '57c\'$'\n''config.vm.provider :virtualbox do |vb|'$'\n' Vagrantfile
+  sed -i "" '58c\'$'\n''vb.customize ["modifyvm", :id, "--memory", "2048"]'$'\n' Vagrantfile
+  sed -i "" '59c\'$'\n''end'$'\n' Vagrantfile
 
   echo "Bringing Box Up..." `date`
   #vagrant up
