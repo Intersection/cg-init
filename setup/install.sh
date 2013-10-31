@@ -6,7 +6,10 @@ else
   #VAGRANT_LOG=info 
   
   #install vbguest vagrant plugin
-  vagrant plugin install vagrant-vbguest  
+  isVBPluginInstalled=$(vagrant plugin list | grep -c "vagrant-vbguest")
+  if [ $isVBPluginInstalled -eq 1 ]; then
+     vagrant plugin install vagrant-vbguest  
+  fi
  
   #Check for existing files and remove before attempting new build
   if [ -e "Vagrantfile" ]
