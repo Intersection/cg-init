@@ -7,7 +7,7 @@ else
   
   #install vbguest vagrant plugin
   isVBPluginInstalled=$(vagrant plugin list | grep -c "vagrant-vbguest")
-  if [ $isVBPluginInstalled -eq 1 ]; then
+  if [ $isVBPluginInstalled -ne 1 ]; then
      vagrant plugin install vagrant-vbguest  
   fi
  
