@@ -4,6 +4,9 @@ then
 else
   #Turn on debug
   #VAGRANT_LOG=info 
+  
+  #install vbguest vagrant plugin
+  vagrant plugin install vagrant-vbguest  
  
   #Check for existing files and remove before attempting new build
   if [ -e "Vagrantfile" ]
