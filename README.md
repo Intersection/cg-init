@@ -10,6 +10,23 @@ CG-INIT TEMPLATE
 Setup Instructions
 ==================
 
+The following are prerequisites for using the install script: [Vagrant](http://www.vagrantup.com/), [Virtualbox](https://www.virtualbox.org/), [Packer](http://www.packer.io/). The versions listed below were the most up-to-date as of November 6, 2013.
+
+Installing Vagrant:
+
+- [Download and install 1.3.5 dmg](http://downloads.vagrantup.com/)
+
+Virtualbox:
+
+- [Download and install 4.3.2 dmg for OS X x386](https://www.virtualbox.org/wiki/Downloads)
+
+Packer:
+
+- [Download zip file 0.3.10 for 386 mac](http://www.packer.io/downloads.html)
+- Unzip, rename folder to "packer", and move folder to /usr/local/bin
+- Add /usr/local/bin/packer to $PATH
+
+
 To boostrap environment run, change directory to setup/ and run the install.sh script passing the host architecture as an agrument:
 
      $ ./install.sh mac
