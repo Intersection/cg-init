@@ -21,7 +21,7 @@ This will be a one time setup.
 Onboarding Instructions
 =======================
 
-If you are an onboarding developer, the configurations have already been setup. Simply run the ./install.sh <arch> script for your respective host architecture.
+If you are an onboarding developer, the configurations have already been setup. Simply run the ./install.sh <arch> <name_for_vm> script for your respective host architecture.
 
 Directory Structure
 ====================

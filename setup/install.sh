@@ -1,3 +1,11 @@
+#Default project VM name
+if [ $2 ]
+	#project vm name set from command line
+	then PROJECTNAME=$2
+else 
+	PROJECTNAME=dev
+
+
 if [ -z "$1" ] 
 then
   echo "Usage: install arch"
@@ -16,7 +24,7 @@ else
   then
   echo "Removing current Vagrantfile"
   vagrant destroy
-  vagrant box remove dev
+  vagrant box remove $PROJECTNAME
   rm Vagrantfile
   fi 
   
@@ -40,7 +48,7 @@ else
 
   #vagrant init
   echo "Starting Vagrant initialization at " `date`
-  vagrant init dev packer_virtualbox_virtualbox.box 
+  vagrant init $PROJECTNAME packer_virtualbox_virtualbox.box 
   echo "Vagrant initilization complete at " `date`
 
   #add ssh user
