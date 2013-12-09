@@ -1,6 +1,6 @@
 if [ -z "$1" ] 
 then
-  echo "Usage: install arch"
+  echo "Usage: install OS-architechture"
 else
   #Turn on debug
   #VAGRANT_LOG=info 
