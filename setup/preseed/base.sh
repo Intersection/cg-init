@@ -14,6 +14,8 @@ if [[ ${hostnameStr} =~ ubuntu-* ]]; then
     sudo apt-get install -y git puppet zip virtualbox-guest-additions-iso;
     mkdir /home/ubuntu/.ssh;
     wget --no-check-certificate 'https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub' -O /home/ubuntu/.ssh/authorized_keys;
+else
+    sudo apt-get install -y git puppet zip
 fi
 
 #Utilize Puppet to load packages
