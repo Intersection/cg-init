@@ -21,6 +21,7 @@
     "iso_checksum_type": "md5",
     "ssh_username": "ubuntu",
     "ssh_password": "ubuntu",
+    "headless": true,
     "http_directory": "preseed",
     "shutdown_command": "sudo shutdown -P now",
     "boot_command": [
