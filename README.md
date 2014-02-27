@@ -32,4 +32,5 @@ To boostrap environment run, change directory to setup/ and run the install.sh s
      $ ./install.sh mac
      
 It may appear that the installation is hanging at the output below, but it is not, and you should not try to kill the process:
+
     ==> virtualbox: Waiting for SSH to become available...
