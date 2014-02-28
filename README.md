@@ -22,7 +22,7 @@ Virtualbox:
 
 Packer:
 
-- [Download zip file 0.3.10 for 386 mac](http://www.packer.io/downloads.html)
+- [Download zip file 0.4.1 for amd64 mac](https://dl.bintray.com/mitchellh/packer/0.4.1_darwin_amd64.zip) *Note CG has only verified cg-init up to 4.1
 - Unzip, rename folder to "packer", and move folder to /usr/local/bin
 - Add /usr/local/bin/packer to $PATH
 
