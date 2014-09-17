@@ -14,23 +14,13 @@ The following are prerequisites for using the install script: [Vagrant](http://w
 
 Installing Vagrant:
 
-- [Download and install 1.3.5 dmg](http://downloads.vagrantup.com/)
+- [Download and install 1.6.x dmg](http://downloads.vagrantup.com/)
 
 Virtualbox:
 
 - [Download and install 4.3.2 dmg for OS X x386](https://www.virtualbox.org/wiki/Downloads)
 
-Packer:
+To boostrap environment run, change directory to setup/ and run the install.sh script`:
 
-- [Download zip file 0.4.1 for amd64 mac](https://dl.bintray.com/mitchellh/packer/0.4.1_darwin_amd64.zip) *Note CG has only verified cg-init up to 4.1
-- Unzip, rename folder to "packer", and move folder to /usr/local/bin
-- Add /usr/local/bin/packer to $PATH
-
-
-To boostrap environment run, change directory to setup/ and run the install.sh script passing the host architecture as an agrument:
-
-     $ ./install.sh mac
+     $ ./install.sh 
      
-NOTE: When the  installation reaches the point shown below, it may seem as if it is "hanging". It is not. It is normal at this stage for no additional output to appear for 10-20 minutes. It is still installing; do not try to kill the process.
-
-    ==> virtualbox: Waiting for SSH to become available...
