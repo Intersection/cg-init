@@ -25,16 +25,8 @@ If you are an onboarding developer, the configurations have already been setup. 
 
 Directory Structure
 ====================
-
-    |---mac/ This contains the packer specific file for mac based host OS
-    |
-    |---linux/ This contains the packer specific file for linux based host OS
-    |
-    |---windows/ This contains the packer specific file for windows based host OS
-    |
-    |---preseed/ This contains the base preseed configuration 
-    |    |
-    |    |---base.sh The base install script
+    
+    |--docker/  This contains  the docker containers and their respective dockerfile 
     |
     |---puppet/ This contains the puppet modules and receipes
          |
@@ -43,18 +35,4 @@ Directory Structure
          |      |---init.pp This file is the main puppet manifest. 
          |
          |---modules/ This contains the different modules that may be included in a project
-
-
-Packer Commands
-===============
-
-
-Validate the packer file
-
-    $ packer validate <arch>/packer-<arch>.json
-
-
-Build packer
-
-    $ packer build <arch>/packer-<arch>.json 
 
