@@ -1,0 +1,19 @@
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = '2'
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+ 
+# Change 'app' to the application type, ie. platform, webapp, cms, etc.
+  config.vm.define "app" do |v|
+    v.vm.provider "docker" do |d|
+      # UPDATE ME with the 'app' name as well
+      d.build_dir = "docker/app"
+      d.cmd = ["/sbin/my_init", "--enable-insecure-key"]
+      d.remains_running = true 
+    end
+    v.ssh.username = "root"
+    # Make sure you get this key via the 'vagrant docker-logs <app>' command
+    v.ssh.private_key_path = "cg.key"
+    v.vm.synced_folder "../product", "/home/root/product"
+  end
+end
