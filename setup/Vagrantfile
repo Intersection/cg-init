@@ -6,6 +6,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 # Change 'app' to the application type, ie. platform, webapp, cms, etc.
   config.vm.define "app" do |v|
     v.vm.provider "docker" do |d|
+      # use CG custom local VM
+      d.vagrant_vagrantfile = "host/Vagrantfile"
       # UPDATE ME with the 'app' name as well
       d.build_dir = "docker/app"
       d.cmd = ["/sbin/my_init", "--enable-insecure-key"]
