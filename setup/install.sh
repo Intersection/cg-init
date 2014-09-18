@@ -1,5 +1,5 @@
 #Turn on debug
-#VAGRANT_LOG=info 
+VAGRANT_LOG=info 
 APPLICATION_NAME=app
 
 #install vbguest vagrant plugin
@@ -18,5 +18,5 @@ vagrant docker-logs $APPLICATION_NAME
 
 echo "Attempting to ssh to box..." `date`
 
-#vagrant ssh
+# finish by sshing into the box
 vagrant ssh
