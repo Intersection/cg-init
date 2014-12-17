@@ -58,12 +58,12 @@ trait ELKService extends HttpService
                     }
       } ~
       post { ctx =>
-        logger.debug(RequestLog("POST",ctx.request.headers(3).toString(),"192.168.1.1").toJson)
+        logger.debug(RequestLog("POST",ctx.request.headers(2).toString(),"192.168.1.1").toJson)
         logger.debug(ResponseLog("201").toJson)
         ctx.complete(StatusCodes.Created)
       } ~
       put { ctx =>
-        logger.debug(RequestLog("PUT",ctx.request.headers(3).toString(),"192.168.1.1").toJson)
+        logger.debug(RequestLog("PUT",ctx.request.headers(2).toString(),"192.168.1.1").toJson)
         logger.debug(ResponseLog("500").toJson)
         ctx.complete(StatusCodes.InternalServerError)
       }
@@ -78,7 +78,7 @@ trait ELKService extends HttpService
         getFromResource("web/index.html")
       } ~
         post { ctx =>
-                    logger.debug(RequestLog("POST",ctx.request.headers(3).toString(),"192.168.1.1").toJson)
+                    logger.debug(RequestLog("POST",ctx.request.headers(2).toString(),"192.168.1.1").toJson)
                     logger.debug(ResponseLog("201").toJson)
                      val entity = ctx.request.entity.data.asString
                     logger.debug(entity)

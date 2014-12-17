@@ -53,7 +53,9 @@ else
 
   #configure port forwarding
   echo "Configuring port forwarding..."
-  sed -i "" '23i\'$'\n''config.vm.network :forwarded_port, guest: 80, host: 8080' Vagrantfile
+  sed -i "" '23i\'$'\n''config.vm.network :forwarded_port, guest: 8085, host: 8085' Vagrantfile
+  sed -i "" '24i\'$'\n''config.vm.network :forwarded_port, guest: 9200, host: 9200' Vagrantfile
+  sed -i "" '25i\'$'\n''config.vm.network :forwarded_port, guest: 8076, host: 8076' Vagrantfile
   
   #configure memory for box
   echo "Configuring box memory..."

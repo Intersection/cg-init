@@ -9,6 +9,10 @@ Exec {
 #  commented for convenience.                          ##
 #########################################################
 
-#include nginx
-#include postgresql
-#include gunicorn
+include  nginx 
+include java
+include mongodb
+include sbt
+include logstash
+include elasticsearch
+include kibana
