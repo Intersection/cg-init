@@ -7,6 +7,15 @@ CG-INIT TEMPLATE
         2) The initial developer edits the puppets site.pp and module init.pp files for the respective project
         3) All onboarding members of the project change directory to setup/ and run the install.sh <arch> script to bootstrap their environment.
 
+E.L.K DEMO
+==============
+
+    The goal of this demo is to showcase a software architecture template for utilizing logs as both data on system state and
+    metrics on system runtime. It is composed of a Scala/Spray/Akka stack on the JVM with a MongoDB datastore for persistence as
+    a sample application. The rest of the software architecture is comprised of Logstash, Elasticsearch, and Kibana. Logstash
+    provides the filtering of logs, Elasticsearch provides a k/v datastore that allows for advanced search/queries, and Kibana
+    is a lightweight javascript based UI for displaying the information collected.
+
 Setup Instructions
 ==================
 
@@ -34,3 +43,4 @@ To boostrap environment run, change directory to setup/ and run the install.sh s
 NOTE: When the  installation reaches the point shown below, it may seem as if it is "hanging". It is not. It is normal at this stage for no additional output to appear for 10-20 minutes. It is still installing; do not try to kill the process.
 
     ==> virtualbox: Waiting for SSH to become available...
+
