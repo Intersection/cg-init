@@ -10,7 +10,11 @@ CG-INIT TEMPLATE
 E.L.K DEMO
 ==============
 
- The goal of this demo is to showcase a software architecture template for utilizing logs as both data on system state and metrics on system runtime. It is composed of a Scala/Spray/Akka stack on the JVM with a MongoDB datastore for persistence as a sample application. The rest of the software architecture is comprised of Logstash, Elasticsearch, and Kibana. Logstash provides the filtering of logs, Elasticsearch provides a k/v datastore that allows for advanced search/queries, and Kibana is a lightweight javascript based UI for displaying the information collected.
+    The goal of this demo is to showcase a software architecture template for utilizing logs as both data on system state and
+    metrics on system runtime. It is composed of a Scala/Spray/Akka stack on the JVM with a MongoDB datastore for persistence as
+    a sample application. The rest of the software architecture is comprised of Logstash, Elasticsearch, and Kibana. Logstash
+    provides the filtering of logs, Elasticsearch provides a k/v datastore that allows for advanced search/queries, and Kibana
+    is a lightweight javascript based UI for displaying the information collected.
 
 Setup Instructions
 ==================
