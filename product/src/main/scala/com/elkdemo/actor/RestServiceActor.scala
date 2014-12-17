@@ -19,12 +19,12 @@ class RestServiceActor extends Actor with ActorLogging with ELKService
 
   override def preStart(): Unit =
   {
-//    log.debug(s"{'event':'actor-pre-start','actorName':'${self.path}', 'message':'actor starting up...'}")
+    log.debug(s"{'event':'actor-pre-start','actorName':'${self.path}', 'message':'actor starting up...'}")
   }
 
   // this actor only runs our route, but you could add
   // other things here, like request stream processing
   // or timeout handling
-  def receive = runRoute(demoRoute)
+  def receive = runRoute(demoRoute ~ demoClientRoute)
 }
 

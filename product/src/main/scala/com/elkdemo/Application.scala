@@ -8,6 +8,7 @@ import akka.util.Timeout
 import scala.concurrent.duration._
 import akka.pattern.ask
 import com.elkdemo.actor.RestServiceActor
+import org.slf4j.LoggerFactory
 
 /**
  * Main App
@@ -16,6 +17,10 @@ import com.elkdemo.actor.RestServiceActor
 object Application extends App
 {
   implicit val timeout = Timeout(5.seconds)
+  def logger = LoggerFactory.getLogger(this.getClass)
+  logger.debug(
+    """{"testval1":"one","testval2":2}
+    """.stripMargin)
 
   // we need an ActorSystem to host our application in
   implicit val system = ActorSystem(ConfigFactory.load().getString("actor.system.id"))
