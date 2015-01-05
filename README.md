@@ -22,7 +22,7 @@ Virtualbox:
 
 Packer:
 
-- [Download zip file for amd64 mac](https://www.packer.io/downloads.html) *Nopte Requires Packer 1.5+
+- [Download zip file for amd64 mac](https://www.packer.io/downloads.html) *Note Requires Packer 0.5+
 - Unzip, rename folder to "packer", and move folder to /usr/local/bin
 - Add /usr/local/bin/packer to $PATH
 - Optionally you can use a package manager to install packer
