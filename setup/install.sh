@@ -40,7 +40,7 @@ else
 
   #vagrant init
   echo "Starting Vagrant initialization at " `date`
-  vagrant init dev packer_virtualbox_virtualbox.box 
+  vagrant init dev packer_virtualbox-iso_virtualbox.box 
   echo "Vagrant initilization complete at " `date`
 
   #add ssh user
