@@ -35,7 +35,7 @@ else
   #do packer install
   echo "Starting packer build at " `date`  
   #PACKER_LOG=1 packer build -only=virtualbox $1/packer-$1.json
-  packer build -only=virtualbox $1/packer-$1.json
+  packer build -only=virtualbox-iso $1/packer-$1.json
   echo "Packer build complete at " `date`
 
   #vagrant init
