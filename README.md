@@ -22,9 +22,10 @@ Virtualbox:
 
 Packer:
 
-- [Download zip file 0.4.1 for amd64 mac](https://dl.bintray.com/mitchellh/packer/#0.4.1_darwin_amd64.zip) *Note CG has only verified cg-init up to 0.4.1
+- [Download zip file for amd64 mac](https://www.packer.io/downloads.html) *Note Requires Packer 0.5+
 - Unzip, rename folder to "packer", and move folder to /usr/local/bin
 - Add /usr/local/bin/packer to $PATH
+- Optionally you can use a package manager to install packer
 
 
 To boostrap environment run, change directory to setup/ and run the install.sh script passing the host architecture as an agrument:

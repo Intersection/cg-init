@@ -23,7 +23,7 @@ else
   if [ -e "packer_virtualbox_virtualbox.box" ]
   then  
   echo "Removing current box"
-  rm packer_virtualbox_virtualbox.box
+  rm packer_virtualbox-iso_virtualbox.box
   fi
  
   if [ -e ".vagrant" ]
@@ -35,12 +35,12 @@ else
   #do packer install
   echo "Starting packer build at " `date`  
   #PACKER_LOG=1 packer build -only=virtualbox $1/packer-$1.json
-  packer build -only=virtualbox $1/packer-$1.json
+  packer build -only=virtualbox-iso $1/packer-$1.json
   echo "Packer build complete at " `date`
 
   #vagrant init
   echo "Starting Vagrant initialization at " `date`
-  vagrant init dev packer_virtualbox_virtualbox.box 
+  vagrant init dev packer_virtualbox-iso_virtualbox.box 
   echo "Vagrant initilization complete at " `date`
 
   #add ssh user
