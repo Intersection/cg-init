@@ -23,7 +23,7 @@ else
   if [ -e "packer_virtualbox_virtualbox.box" ]
   then  
   echo "Removing current box"
-  rm packer_virtualbox_virtualbox.box
+  rm packer_virtualbox-iso_virtualbox.box
   fi
  
   if [ -e ".vagrant" ]
